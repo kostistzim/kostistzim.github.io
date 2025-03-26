@@ -34,9 +34,9 @@ github_username:  kostistzim
 # plugins:
 #   - jekyll-feed
 
-remote_theme: pages-themes/time-machine@v0.2.0
+theme: minima  
 plugins:
-  - jekyll-remote-theme
+  - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
