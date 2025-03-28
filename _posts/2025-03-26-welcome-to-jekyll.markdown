@@ -47,6 +47,12 @@ From left to right, the charts display:
 <li>Hourly patterns, revealing a sharp increase in incidents during the afternoon, peaking between 2 – 4 PM.</li>
 </ol> </p> 
 
+<iframe
+    src="/district_filter.html"
+    width="100%"
+    height="600"
+    style="border:none;"
+></iframe>
 
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
