@@ -46,10 +46,13 @@ From left to right, the charts display:
 
 <li>Hourly patterns, revealing a sharp increase in incidents during the afternoon, peaking between 2 – 4 PM.</li>
 </ol> </p> 
+
+<h2 style="font-weight: bold; color: #1c5d99;">Where Do Drug Incidents Happen Over the Years?</h2> 
+
 <iframe
     src="/district_filter.html"
     width="120%"
-    height="500"
+    height="530"
     style="
       border: none;
       margin: 0;
