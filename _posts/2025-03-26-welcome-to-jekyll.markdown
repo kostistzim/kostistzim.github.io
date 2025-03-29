@@ -47,7 +47,39 @@ From left to right, the charts display:
 <li>Hourly patterns, revealing a sharp increase in incidents during the afternoon, peaking between 2 – 4 PM.</li>
 </ol> </p> 
 
-<h2 style="font-weight: bold; color: #1c5d99;">Where Do Drug Incidents Happen Over the Years?</h2> 
+
+<br>
+<h2 style="font-weight: bold; color: #1c5d99;">Where Do Drug/Narcotics Incidents Concentrate?</h2> 
+
+<div style="text-align: justify;">
+<p style="text-align: justify;">Drug-related incidents in San Francisco are not evenly distributed across the city. Some neighborhoods consistently experience higher volumes, particularly those known for their active nightlife and heavy foot traffic.
+<br>
+<br>
+Figure 2 highlights these spatial patterns, showing how drug and narcotics incidents cluster in areas like the Southern, Tenderloin, and Mission police districts. Darker shading indicates higher incident counts, and these same districts are home to many of the city’s most frequented bars and nightclubs.
+<br>
+<br>
+To visualize this connection, the map also includes markers for popular nightlife venues. A clear overlap emerges: many clubs are located directly within or near the districts with the highest levels of drug-related activity.
+<br>
+<br>
+This relationship likely reflects multiple factors:
+
+<ul>
+  <li>Nightlife zones tend to attract dense crowds, creating opportunities for drug transactions or use.</li>
+  <li>Heavily policed areas may show higher reporting rates due to increased surveillance.</li>
+  <li>Social and economic dynamics — particularly in fast-changing neighborhoods like the Mission — can influence both nightlife trends and illicit activity.</li>
+</ul>
+
+While nightlife isn’t necessarily the cause, these overlapping patterns point to shared spaces where multiple urban dynamics intersect. Understanding this geography is crucial for shaping effective public health and safety responses.</p> 
+</div>
+
+<br>
+<iframe src="/map/sf_drug_map.html" width="100%" height="600" style="border:none;"></iframe>
+<br>
+
+<p style="text-align: justify;"> <b>Figure 2</b>: The map displays drug and narcotics incidents in San Francisco. District color intensity represents the number of reported incidents, with darker shades indicating higher concentrations. Purple icons mark popular clubs and bars, which appear densely clustered in the most affected districts. </p>
+
+<br>
+<h2 style="font-weight: bold; color: #1c5d99;">Where Do Drug/Narcotics Incidents Happen Over the Years?</h2> 
 
 <iframe
     src="/district_filter.html"
