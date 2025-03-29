@@ -84,24 +84,23 @@ While nightlife isn’t necessarily the cause, these overlapping patterns point 
 <iframe
     src="/district_filter.html"
     width="120%"
-    height="530"
+    height="450"
     style="
       border: none;
       margin: 0;
       padding: 0;
       display: block;
   "></iframe>
-<p style="
-  margin-top: -1em;
-  padding: 0;
-  text-align: justify;
-">The data reflects a stark contrast between San Francisco’s high-tech innovations and the grim reality faced by neighborhoods such as the Tenderloin. Despite the city’s fame for its tech scene, areas like the Tenderloin remain epicenters for open-air drug markets, as highlighted in both our interactive plot and a recent CNN article. As of 2023, the Tenderloin continues to struggle with alarming overdose death rates, further emphasized by the San Francisco Chronicle's projections of 633 overdose deaths by 2024.
-<br>
-<br>
+
+
+<p style="text-align: justify;"> <b>Figure 3</b>: This chart shows drug/narcotics incidents by Police District in San Francisco over the years, filtered by month and day of the week. </p>
+
+The data reflects a stark contrast between San Francisco’s high-tech innovations and the grim reality faced by neighborhoods such as the Tenderloin. Despite the city’s fame for its tech scene, areas like the Tenderloin remain epicenters for open-air drug markets, as highlighted in both our interactive plot and a recent CNN article. As of 2023, the Tenderloin continues to struggle with alarming overdose death rates, further emphasized by the San Francisco Chronicle's projections of 633 overdose deaths by 2024.
+
 This contrast underscores a pressing need for significant policy changes and increased mental health support in San Francisco. In addition to fostering innovation, it is crucial to invest in harm reduction programs and protection for the city's most vulnerable residents.
 
 
-</p>
+
 
 
 
