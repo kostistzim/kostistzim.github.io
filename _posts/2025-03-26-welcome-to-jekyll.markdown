@@ -4,6 +4,7 @@ title:  "A Look at Drug & Narcotics Crimes in San Francisco"
 date:   2025-03-26 10:29:07 +0100
 categories: jekyll update
 ---
+<br>
 <h2 style="text-align: justify; font-weight: bold; color: #1c5d99;">Introduction</h2> 
 
 <p style="text-align: justify;"> San Francisco has long stood at the intersection of innovation, activism - and social challenges. One of the most persistent is drug and narcotics-related crime.
@@ -18,7 +19,7 @@ Focusing specifically on drug and narcotics incidents from 2003 to 2025, we aime
 <br>
 Offences like these can have a negative effect on public safety and how the community feels. They can also be a sign of bigger changes in the law, like the legalisation of cannabis or new ways of policing. We can make it easier to understand how drug crime in San Francisco is changing by using a mix of different types of data and showing it in different ways.</p>
 
-
+<br>
 <h2 style="font-weight: bold; color: #1c5d99;">When Do Drug/Narcotics Incidents Happen?</h2> 
 
 <p style="text-align: justify;"> Drug-related incidents in San Francisco reveal strong temporal patterns — not only in how they’ve changed over the years, but also in the rhythm of days and hours. 
@@ -73,7 +74,7 @@ While nightlife isn’t necessarily the cause, these overlapping patterns point 
 </div>
 
 <br>
-<iframe src="/map/sf_drug_map.html" width="100%" height="600" style="border:none;"></iframe>
+<iframe src="/map/sf_drug_map.html" width="100%" height="400" style="border:none;"></iframe>
 <br>
 
 <p style="text-align: justify;"> <b>Figure 2</b>: The map displays drug and narcotics incidents in San Francisco. District color intensity represents the number of reported incidents, with darker shades indicating higher concentrations. Purple icons mark popular clubs and bars, which appear densely clustered in the most affected districts. </p>
@@ -92,33 +93,50 @@ While nightlife isn’t necessarily the cause, these overlapping patterns point 
       display: block;
   "></iframe>
 
-
-<p style="text-align: justify;"> <b>Figure 3</b>: This chart shows drug/narcotics incidents by Police District in San Francisco over the years, filtered by month and day of the week. </p>
-
+<br>
+<p style="text-align: justify;"> <b>Figure 3</b>: This chart shows drug/narcotics incidents by Police District in San Francisco over the years, filtered by month and day of the week. 
+<br>
+<br>
 The data reflects a stark contrast between San Francisco’s high-tech innovations and the grim reality faced by neighborhoods such as the Tenderloin. Despite the city’s fame for its tech scene, areas like the Tenderloin remain epicenters for open-air drug markets, as highlighted in both our interactive plot and a recent CNN article. As of 2023, the Tenderloin continues to struggle with alarming overdose death rates, further emphasized by the San Francisco Chronicle's projections of 633 overdose deaths by 2024.
-
-This contrast underscores a pressing need for significant policy changes and increased mental health support in San Francisco. In addition to fostering innovation, it is crucial to invest in harm reduction programs and protection for the city's most vulnerable residents.
-
-
-
+<br>
+<br>
+This contrast underscores a pressing need for significant policy changes and increased mental health support in San Francisco. In addition to fostering innovation, it is crucial to invest in harm reduction programs and protection for the city's most vulnerable residents. </p>
 
 
-
+<br>
 <h2 style="font-weight: bold; color: #1c5d99;">References</h2>
 <ul>
   <li>
     San Francisco Chronicle, 
-    <a href="https://www.sfchronicle.com/projects/san-francisco-drug-overdose-deaths/" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.sfchronicle.com/projects/san-francisco-drug-overdose-deaths/" 
+       target="_blank" rel="noopener noreferrer">
       San Francisco Drug Overdose Deaths
     </a>
   </li>
   <li>
     CNN, 
-    <a href="https://edition.cnn.com/2023/09/03/us/san-francisco-tenderloin-drug-market/index.html" target="_blank" rel="noopener noreferrer">
+    <a href="https://edition.cnn.com/2023/09/03/us/san-francisco-tenderloin-drug-market/index.html" 
+       target="_blank" rel="noopener noreferrer">
       San Francisco Tenderloin Drug Market
     </a>
   </li>
+  <li>
+    San Francisco Standard, 
+    <a href="https://sfstandard.com/2023/08/30/drug-crime-dips-in-san-franciscos-tenderloin-rises-elsewhere-in-the-city-police-data-says/" 
+       target="_blank" rel="noopener noreferrer">
+      Drug Crime Dips in Tenderloin, Rises in Mission
+    </a>
+  </li>
+  <li>
+    Inside Guide to SF, 
+    <a href="https://www.inside-guide-to-san-francisco-tourism.com/san-francisco-crime.html" 
+       target="_blank" rel="noopener noreferrer">
+      San Francisco Crime Hotspots
+    </a>
+  </li>
 </ul>
+
+<br>
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
