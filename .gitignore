@@ -1,5 +1,11 @@
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-vendor
+.DS_Store
+_site/
+.jekyll-cache/
+.ipynb_checkpoints/
+# impeccable: machine-local files
+.claude/settings.local.json
+.claude/skills/impeccable/scripts/bin/
+.impeccable/config.local.json
+.impeccable/review/
+.impeccable/mocks/
+.impeccable/build/
