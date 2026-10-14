@@ -27,8 +27,7 @@ export default async function Page() {
         <section className="block" aria-labelledby="currently">
           <h2 id="currently" className="label">Currently</h2>
           <p>
-            Building knowledge-grounded AI systems: LLM pipelines with typed interfaces, retrieval and knowledge graphs, on data systems I understand from first principles.
-            Student AI / data science roles at Amass and with DTU and Danmarks Statistik, alongside the MSc at DTU. {person.availability}
+            Building knowledge-grounded AI systems: LLM pipelines with typed interfaces, retrieval and knowledge graphs, on data systems I understand from first principles. {person.availability}
           </p>
           <CopyEmail email={person.email} />
         </section>
@@ -104,6 +103,10 @@ export default async function Page() {
             </div>
           ))}
         </dl>
+      </section>
+
+      <section className="block" id="also" aria-labelledby="h-also">
+        <h2 id="h-also" className="label">Also</h2>
         <dl className="skills">
           {activities.map((a) => (
             <div key={a.what} className="skills__row">

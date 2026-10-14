@@ -43,18 +43,18 @@ export default function NowPlaying() {
         <a className="music" href={track.url} rel="noreferrer">
           {track.art ? <img className="music__art" src={track.art} alt="" width={64} height={64} /> : <div className="music__art music__art--empty" aria-hidden="true" />}
           <span className="music__text">
-            <span className="tile__label">{track.nowPlaying ? <><i className="live" aria-hidden="true" />Now playing</> : "Last played"}</span>
             <span className="music__title">{track.name}</span>
             <span className="music__artist">{track.artist}</span>
           </span>
+          <span className="tile__caption"><span>{track.nowPlaying ? <><i className="live" aria-hidden="true" />Now playing</> : "Last played"}</span><span className="mono">Last.fm</span></span>
         </a>
       ) : (
         <div className="music music--empty">
           <div className="music__art music__art--empty" aria-hidden="true" />
           <span className="music__text">
-            <span className="tile__label">Music</span>
             <span className="music__artist">{state === "loading" ? "Checking Last.fm…" : "Last.fm is not answering right now."}</span>
           </span>
+          <span className="tile__caption"><span>Music</span><span className="mono">Last.fm</span></span>
         </div>
       )}
     </div>

@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-14T00:00:00Z",
+  "title": "Design System: kostistzim.github.io",
+  "extensions": {
+    "colorMeta": {
+      "ember": { "role": "primary", "displayName": "Ember", "canonical": "#E8623C", "tonalRamp": ["oklch(22% 0.09 38)", "oklch(32% 0.13 38)", "oklch(42% 0.16 38)", "oklch(52% 0.18 38)", "oklch(64% 0.18 38)", "oklch(74% 0.14 38)", "oklch(85% 0.08 38)", "oklch(95% 0.03 38)"] },
+      "ember-soft": { "role": "primary", "displayName": "Ember Soft", "canonical": "rgba(232, 98, 60, 0.18)", "tonalRamp": ["rgba(232,98,60,0.06)", "rgba(232,98,60,0.12)", "rgba(232,98,60,0.18)", "rgba(232,98,60,0.32)", "rgba(232,98,60,0.55)", "rgba(232,98,60,0.78)", "rgba(232,98,60,0.9)", "rgba(232,98,60,1)"] },
+      "ground": { "role": "neutral", "displayName": "Ground", "canonical": "#0F0F0F", "tonalRamp": ["#0F0F0F", "#161616", "#262626", "#333333", "#8F8F8F", "#D4D3CE", "#E6E5E1", "#FAFAF9"] },
+      "surface": { "role": "neutral", "displayName": "Surface", "canonical": "#161616", "tonalRamp": ["#0F0F0F", "#161616", "#262626", "#333333", "#8F8F8F", "#D4D3CE", "#E6E5E1", "#FFFFFF"] },
+      "fg": { "role": "neutral", "displayName": "Foreground", "canonical": "#EDEDED", "tonalRamp": ["#141414", "#262626", "#333333", "#6B6B6B", "#8F8F8F", "#D4D3CE", "#EDEDED", "#FAFAF9"] },
+      "muted": { "role": "neutral", "displayName": "Muted", "canonical": "#8F8F8F", "tonalRamp": ["#0F0F0F", "#262626", "#333333", "#6B6B6B", "#8F8F8F", "#D4D3CE", "#E6E5E1", "#EDEDED"] },
+      "hairline": { "role": "neutral", "displayName": "Hairline", "canonical": "#262626", "tonalRamp": ["#0F0F0F", "#161616", "#262626", "#333333", "#6B6B6B", "#999999", "#BBBBBB", "#E6E5E1"] },
+      "hairline-strong": { "role": "neutral", "displayName": "Hairline Strong", "canonical": "#333333", "tonalRamp": ["#0F0F0F", "#161616", "#262626", "#333333", "#6B6B6B", "#999999", "#D4D3CE", "#E6E5E1"] },
+      "light-ground": { "role": "neutral", "displayName": "Light Ground", "canonical": "#FAFAF9", "tonalRamp": ["#141414", "#333333", "#6B6B6B", "#8F8F8F", "#D4D3CE", "#E6E5E1", "#FAFAF9", "#FFFFFF"] },
+      "light-surface": { "role": "neutral", "displayName": "Light Surface", "canonical": "#FFFFFF", "tonalRamp": ["#141414", "#333333", "#6B6B6B", "#8F8F8F", "#D4D3CE", "#E6E5E1", "#FAFAF9", "#FFFFFF"] },
+      "light-fg": { "role": "neutral", "displayName": "Light Foreground", "canonical": "#141414", "tonalRamp": ["#0F0F0F", "#141414", "#262626", "#333333", "#6B6B6B", "#8F8F8F", "#D4D3CE", "#FAFAF9"] },
+      "light-muted": { "role": "neutral", "displayName": "Light Muted", "canonical": "#6B6B6B", "tonalRamp": ["#141414", "#262626", "#333333", "#444444", "#6B6B6B", "#8F8F8F", "#D4D3CE", "#FAFAF9"] },
+      "light-hairline": { "role": "neutral", "displayName": "Light Hairline", "canonical": "#E6E5E1", "tonalRamp": ["#141414", "#333333", "#6B6B6B", "#999999", "#BBBBBB", "#D4D3CE", "#E6E5E1", "#FAFAF9"] },
+      "light-hairline-strong": { "role": "neutral", "displayName": "Light Hairline Strong", "canonical": "#D4D3CE", "tonalRamp": ["#141414", "#333333", "#6B6B6B", "#999999", "#BBBBBB", "#D4D3CE", "#E6E5E1", "#FAFAF9"] },
+      "light-ember": { "role": "primary", "displayName": "Light Ember", "canonical": "#B8431F", "tonalRamp": ["oklch(22% 0.09 38)", "oklch(32% 0.13 38)", "oklch(42% 0.16 38)", "oklch(52% 0.18 38)", "oklch(64% 0.18 38)", "oklch(74% 0.14 38)", "oklch(85% 0.08 38)", "oklch(95% 0.03 38)"] },
+      "light-ember-soft": { "role": "primary", "displayName": "Light Ember Soft", "canonical": "rgba(184, 67, 31, 0.14)", "tonalRamp": ["rgba(184,67,31,0.06)", "rgba(184,67,31,0.14)", "rgba(184,67,31,0.24)", "rgba(184,67,31,0.36)", "rgba(184,67,31,0.55)", "rgba(184,67,31,0.78)", "rgba(184,67,31,0.9)", "rgba(184,67,31,1)"] }
+    },
+    "typographyMeta": {
+      "name": { "displayName": "Name", "purpose": "The h1 only, once, at the top of the sheet; 20pt in print." },
+      "label": { "displayName": "Section Label", "purpose": "Every section heading, sentence-case foreground sans; weight alone separates it from body." },
+      "body": { "displayName": "Body", "purpose": "Prose, list titles (weight 500), skill values, footer." },
+      "body-small": { "displayName": "Body Small", "purpose": "The artist line inside the music tile." },
+      "mono": { "displayName": "Mono", "purpose": "Dates, durations, places, stacks, the email, contact links, tile caption values. Muted by default." },
+      "mono-control": { "displayName": "Mono Control", "purpose": "Text inside dock and copy buttons, the skip link, the contribution caption." }
+    },
+    "shadows": [
+      { "name": "dock-float", "value": "0 10px 30px -12px rgba(0, 0, 0, 0.6)", "purpose": "Only on the fixed pill dock, because it is the only element that floats over content." },
+      { "name": "live-halo", "value": "0 0 0 3px var(--accent-soft)", "purpose": "The 3px ember-soft ring around the 6px live dot; a halo, not a shadow." }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(0.19, 1, 0.22, 1)", "purpose": "Exponential-out easing for the clock second hand (200ms) and tile transform (600ms)." },
+      { "name": "fade", "value": "150ms ease", "purpose": "Colour and background fades on dock and copy buttons." },
+      { "name": "theme-fade", "value": "200ms ease", "purpose": "Body background and colour when the theme toggles; tile border-color on hover." },
+      { "name": "reduced-motion", "value": "transition: none; animation: none", "purpose": "Under prefers-reduced-motion every transition and animation is disabled and smooth scroll is off." }
+    ],
+    "breakpoints": [
+      { "name": "narrow", "value": "640px" },
+      { "name": "phone", "value": "420px" }
+    ],
+    "schemes": [
+      { "name": "dark", "selector": ":root", "default": true },
+      { "name": "light", "selector": ":root[data-theme=\"light\"]", "note": "Chosen by the dock toggle, stored in localStorage, applied before first paint; falls back to prefers-color-scheme." },
+      { "name": "print", "selector": "@media print", "note": "White ground, black foreground, #444 muted, #bbb / #999 hairlines, light ember; widgets, dock and activity removed." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Dock",
+      "kind": "nav",
+      "refersTo": "dock",
+      "description": "The fixed bottom-centre pill holding the page's three actions: copy email, print, theme.",
+      "html": "<nav class=\"ds-dock\" aria-label=\"Page actions\"><button type=\"button\" class=\"ds-dock__btn\"><svg class=\"ds-icon\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><rect x=\"5.5\" y=\"5.5\" width=\"8\" height=\"8\" rx=\"1.5\"/><path d=\"M10.5 5.5v-2a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2\"/></svg>Copy email</button><span class=\"ds-dock__sep\" aria-hidden=\"true\"></span><button type=\"button\" class=\"ds-dock__btn\"><svg class=\"ds-icon\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M4.5 6V2.5h7V6M4.5 11.5h7v2h-7zM3 6h10a1 1 0 0 1 1 1v3.5a1 1 0 0 1-1 1h-1.5M4.5 11.5H3a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1\"/></svg>Print</button><span class=\"ds-dock__sep\" aria-hidden=\"true\"></span><button type=\"button\" class=\"ds-dock__btn ds-dock__btn--icon\" aria-label=\"Switch to light theme\"><svg class=\"ds-icon\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><circle cx=\"8\" cy=\"8\" r=\"3\"/><path d=\"M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.4 3.4l1 1M11.6 11.6l1 1M3.4 12.6l1-1M11.6 4.4l1-1\"/></svg></button></nav>",
+      "css": ".ds-dock { display: inline-flex; align-items: center; gap: 2px; padding: 4px; background: var(--surface, #161616); border: 1px solid var(--hairline-strong, #333333); border-radius: 999px; box-shadow: 0 10px 30px -12px rgba(0,0,0,0.6); } .ds-dock__btn { display: inline-flex; align-items: center; gap: 7px; height: 32px; padding: 0 12px; border: 0; border-radius: 999px; background: transparent; color: var(--muted, #8F8F8F); cursor: pointer; font-family: var(--mono, ui-monospace, Menlo, monospace); font-size: 12px; transition: color 0.15s ease, background-color 0.15s ease; } .ds-dock__btn:hover { color: var(--fg, #EDEDED); background: var(--ground, #0F0F0F); } .ds-dock__btn:active { transform: translateY(1px); } .ds-dock__btn:focus-visible { outline: 2px solid var(--accent, #E8623C); outline-offset: 3px; } .ds-dock__btn--icon { padding: 0 9px; } .ds-dock__sep { width: 1px; height: 16px; background: var(--hairline-strong, #333333); } .ds-icon { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }"
+    },
+    {
+      "name": "Copy Email",
+      "kind": "button",
+      "refersTo": "copy-button",
+      "description": "The in-line email address in mono with a quiet copy control and an ember 'Copied' confirmation.",
+      "html": "<p class=\"ds-email\"><a class=\"ds-email__addr\" href=\"mailto:hello@example.com\">hello@example.com</a><button type=\"button\" class=\"ds-email__copy\" aria-label=\"Copy email address\"><svg class=\"ds-icon\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><rect x=\"5.5\" y=\"5.5\" width=\"8\" height=\"8\" rx=\"1.5\"/><path d=\"M10.5 5.5v-2a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2\"/></svg><span class=\"ds-email__state\">Copied</span></button></p>",
+      "css": ".ds-email { display: flex; align-items: center; gap: 8px; margin: 0; color: var(--fg, #EDEDED); } .ds-email__addr { color: inherit; text-decoration: none; font-family: var(--mono, ui-monospace, Menlo, monospace); font-size: 12.5px; letter-spacing: 0.005em; } .ds-email__addr:hover { text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 1px; } .ds-email__copy { display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 6px; border: 0; border-radius: 6px; background: transparent; color: var(--muted, #8F8F8F); cursor: pointer; font-family: var(--mono, ui-monospace, Menlo, monospace); font-size: 12px; transition: color 0.15s ease, background-color 0.15s ease; } .ds-email__copy:hover { color: var(--fg, #EDEDED); background: var(--surface, #161616); } .ds-email__copy:active { transform: translateY(1px); } .ds-email__copy:focus-visible { outline: 2px solid var(--accent, #E8623C); outline-offset: 3px; border-radius: 4px; } .ds-email__state { color: var(--accent, #E8623C); } .ds-icon { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }"
+    },
+    {
+      "name": "Widget Tile",
+      "kind": "card",
+      "refersTo": "tile",
+      "description": "The only card in the system: a 200px surface tile with a hairline border that holds a working instrument and a muted caption.",
+      "html": "<div class=\"ds-tile\"><svg class=\"ds-clock\" viewBox=\"0 0 120 120\" aria-hidden=\"true\"><line x1=\"60\" y1=\"60\" x2=\"60\" y2=\"30\" transform=\"rotate(300 60 60)\" stroke=\"var(--fg, #EDEDED)\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"60\" y1=\"60\" x2=\"60\" y2=\"20\" transform=\"rotate(60 60 60)\" stroke=\"var(--fg, #EDEDED)\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><line x1=\"60\" y1=\"66\" x2=\"60\" y2=\"16\" transform=\"rotate(200 60 60)\" stroke=\"var(--accent, #E8623C)\" stroke-width=\"1.25\" stroke-linecap=\"round\"/><circle cx=\"60\" cy=\"60\" r=\"2.5\" fill=\"var(--accent, #E8623C)\"/></svg><p class=\"ds-tile__caption\"><span>Copenhagen</span><span class=\"ds-mono\">10:14</span></p></div>",
+      "css": ".ds-tile { position: relative; width: 200px; height: 200px; border: 1px solid var(--hairline, #262626); background: var(--surface, #161616); border-radius: 14px; display: flex; flex-direction: column; justify-content: flex-end; padding: 14px; overflow: hidden; color: var(--fg, #EDEDED); transition: border-color 0.2s ease; } .ds-tile:hover { border-color: var(--hairline-strong, #333333); } .ds-clock { position: absolute; inset: 10px 14px 34px; margin: auto; height: calc(100% - 44px); width: auto; display: block; } .ds-tile__caption { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; font-family: var(--sans, 'Helvetica Neue', Arial, sans-serif); font-size: 12.5px; color: var(--muted, #8F8F8F); margin: 0; position: relative; } .ds-mono { font-family: var(--mono, ui-monospace, Menlo, monospace); font-size: 12.5px; letter-spacing: 0.005em; }"
+    },
+    {
+      "name": "Ruled List Item",
+      "kind": "custom",
+      "refersTo": "list-item",
+      "description": "The workhorse row: title left, mono meta right, muted lines below, separated by 1px hairlines.",
+      "html": "<ol class=\"ds-list\"><li class=\"ds-item\"><div class=\"ds-item__head\"><a href=\"#\" class=\"ds-item__title\">MLStore-Lite</a><span class=\"ds-mono ds-item__meta\">2025</span></div><p class=\"ds-item__line\">A small feature store built from first principles.</p><p class=\"ds-mono ds-item__stack\">Python · FastAPI · DuckDB</p></li><li class=\"ds-item\"><div class=\"ds-item__head\"><span class=\"ds-item__title\">Student AI engineer · Amass</span><span class=\"ds-mono ds-item__meta\">Copenhagen</span></div><p class=\"ds-mono ds-item__sub\"><i class=\"ds-live\" aria-hidden=\"true\"></i>Internship · Jun 2026 – now · 5 mo</p></li></ol>",
+      "css": ".ds-list { list-style: none; margin: 0; padding: 0; width: 420px; font-family: var(--sans, 'Helvetica Neue', Arial, sans-serif); font-size: 15px; line-height: 1.6; color: var(--fg, #EDEDED); font-variant-numeric: tabular-nums; } .ds-item { padding: 14px 0; border-top: 1px solid var(--hairline, #262626); } .ds-item:last-child { border-bottom: 1px solid var(--hairline, #262626); } .ds-item__head { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; } .ds-item__title { font-weight: 500; color: inherit; text-decoration: none; } a.ds-item__title:hover { text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 1px; } .ds-item__meta { color: var(--muted, #8F8F8F); white-space: nowrap; flex: none; } .ds-item__sub { color: var(--muted, #8F8F8F); margin: 2px 0 6px; } .ds-item__line { color: var(--muted, #8F8F8F); margin: 4px 0 0; } .ds-item__stack { color: var(--muted, #8F8F8F); margin: 6px 0 0; } .ds-mono { font-family: var(--mono, ui-monospace, Menlo, monospace); font-size: 12.5px; letter-spacing: 0.005em; } .ds-live { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--accent, #E8623C); margin-right: 7px; vertical-align: 1px; box-shadow: 0 0 0 3px var(--accent-soft, rgba(232,98,60,0.18)); }"
+    },
+    {
+      "name": "Section Label",
+      "kind": "custom",
+      "refersTo": "label",
+      "description": "A sentence-case 15px weight-500 heading over a block; no caps, no tracking, no eyebrow.",
+      "html": "<section class=\"ds-block\"><h2 class=\"ds-label\">Projects</h2><p class=\"ds-body\">Each project links to the repository that proves it.</p></section>",
+      "css": ".ds-block { font-family: var(--sans, 'Helvetica Neue', Arial, sans-serif); color: var(--fg, #EDEDED); line-height: 1.6; } .ds-label { font-size: 15px; font-weight: 500; margin: 0 0 12px; letter-spacing: -0.005em; } .ds-body { font-size: 15px; margin: 0; }"
+    },
+    {
+      "name": "Contribution Graph",
+      "kind": "custom",
+      "refersTo": "live-dot",
+      "description": "Ember at four opacities over hairline cells; the only place the accent appears in quantity.",
+      "html": "<figure class=\"ds-contrib\"><svg width=\"118\" height=\"66\" viewBox=\"0 0 118 66\" aria-hidden=\"true\"><g transform=\"translate(0 10)\"><rect x=\"0\" y=\"0\" width=\"9\" height=\"9\" rx=\"2\" class=\"ds-cell\"/><rect x=\"0\" y=\"11\" width=\"9\" height=\"9\" rx=\"2\" class=\"ds-cell ds-cell--1\"/><rect x=\"0\" y=\"22\" width=\"9\" height=\"9\" rx=\"2\" class=\"ds-cell ds-cell--2\"/><rect x=\"0\" y=\"33\" width=\"9\" height=\"9\" rx=\"2\" class=\"ds-cell ds-cell--3\"/><rect x=\"0\" y=\"44\" width=\"9\" height=\"9\" rx=\"2\" class=\"ds-cell ds-cell--4\"/><rect x=\"11\" y=\"0\" width=\"9\" height=\"9\" rx=\"2\" class=\"ds-cell ds-cell--2\"/><rect x=\"11\" y=\"11\" width=\"9\" height=\"9\" rx=\"2\" class=\"ds-cell\"/><rect x=\"11\" y=\"22\" width=\"9\" height=\"9\" rx=\"2\" class=\"ds-cell ds-cell--4\"/><rect x=\"11\" y=\"33\" width=\"9\" height=\"9\" rx=\"2\" class=\"ds-cell ds-cell--1\"/><rect x=\"11\" y=\"44\" width=\"9\" height=\"9\" rx=\"2\" class=\"ds-cell\"/><rect x=\"22\" y=\"0\" width=\"9\" height=\"9\" rx=\"2\" class=\"ds-cell ds-cell--1\"/><rect x=\"22\" y=\"11\" width=\"9\" height=\"9\" rx=\"2\" class=\"ds-cell ds-cell--3\"/><rect x=\"22\" y=\"22\" width=\"9\" height=\"9\" rx=\"2\" class=\"ds-cell\"/><rect x=\"22\" y=\"33\" width=\"9\" height=\"9\" rx=\"2\" class=\"ds-cell ds-cell--2\"/><rect x=\"22\" y=\"44\" width=\"9\" height=\"9\" rx=\"2\" class=\"ds-cell ds-cell--4\"/><text x=\"0\" y=\"-4\" class=\"ds-month\">Oct</text></g></svg><figcaption class=\"ds-contrib__caption\"><span>412 contributions in the last year</span><span class=\"ds-legend\">Less <i class=\"ds-swatch\"></i><i class=\"ds-swatch ds-swatch--1\"></i><i class=\"ds-swatch ds-swatch--2\"></i><i class=\"ds-swatch ds-swatch--3\"></i><i class=\"ds-swatch ds-swatch--4\"></i> More</span></figcaption></figure>",
+      "css": ".ds-contrib { margin: 0; } .ds-contrib svg { display: block; } .ds-month { font-family: var(--mono, ui-monospace, Menlo, monospace); font-size: 9px; fill: var(--muted, #8F8F8F); } .ds-cell { fill: var(--hairline, #262626); } .ds-cell--1 { fill: var(--accent, #E8623C); fill-opacity: 0.32; } .ds-cell--2 { fill: var(--accent, #E8623C); fill-opacity: 0.55; } .ds-cell--3 { fill: var(--accent, #E8623C); fill-opacity: 0.78; } .ds-cell--4 { fill: var(--accent, #E8623C); } .ds-contrib__caption { display: flex; justify-content: space-between; gap: 12px; margin-top: 8px; font-family: var(--mono, ui-monospace, Menlo, monospace); font-size: 12px; color: var(--muted, #8F8F8F); } .ds-legend { display: inline-flex; align-items: center; gap: 3px; } .ds-swatch { width: 9px; height: 9px; border-radius: 2px; display: inline-block; background: var(--hairline, #262626); } .ds-swatch--1 { background: var(--accent, #E8623C); opacity: 0.32; } .ds-swatch--2 { background: var(--accent, #E8623C); opacity: 0.55; } .ds-swatch--3 { background: var(--accent, #E8623C); opacity: 0.78; } .ds-swatch--4 { background: var(--accent, #E8623C); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Notebook with Instruments",
+    "overview": "The page is a single sheet of near-black paper read top to bottom like a CV, and it prints as one. Every section is a plain label above a ruled list; the type is small, the column is narrow, and nothing on the sheet asks for attention except the things that are actually alive. Those live things sit in one row of small working instruments under the intro (a ticking Copenhagen clock, a Last.fm now-playing card, a force-directed thesis graph) and a year of real GitHub contributions further down. Proof is shown as working things, not claimed.\n\nDensity is editorial and quiet: 15px Geist Sans body with generous 1.6 leading, 12.5px Geist Mono for every fact that is a date, a duration, a stack or a control. The build rejects the loud portfolio hero, decorative gradients, the card grid, and the transit line of the previous build. Depth comes from one tonal step (ground to surface) and 1px hairlines; the only shadow in the system is under the floating dock.\n\nColour is a discipline rather than a palette. One ember accent exists and is spent only on live state: the second hand, the \"now\" dot beside a current role or a playing track, the disease nodes in the graph, the hottest contribution cells, text selection and the focus ring. A light scheme and a print scheme re-map every token so the same structure survives on white paper.",
+    "keyCharacteristics": [
+      "One 680px column, centred, no sidebar and no grid of cards.",
+      "Two type voices only: Geist Sans for prose and labels, Geist Mono for metadata and controls.",
+      "Ruled lists (1px hairline top and bottom) carry every section; widget tiles are the only bordered, rounded surfaces.",
+      "One accent, ember, reserved for things that are live right now.",
+      "Three schemes (dark, light, print) driven by the same custom properties; dark is the default.",
+      "Motion is confined to the instruments: the clock ticks, the graph settles and follows the pointer; everything else is a 150–200ms colour fade."
+    ],
+    "rules": [
+      { "name": "The Live-Only Ember Rule", "body": "Ember marks something that is true right now: a second hand, a playing track, a current role, a commit this year, a hot graph node. It never colours a heading, a link, a button at rest, or decoration. If it is not live, it is foreground or muted.", "section": "colors" },
+      { "name": "The Two-Hairline Rule", "body": "Structure is drawn with 1px hairlines at exactly two strengths: hairline for rules and resting borders, hairline-strong for hover, the dock chrome and graph links. No other border colours exist.", "section": "colors" },
+      { "name": "The Mono-Is-Data Rule", "body": "If a string is a date, a duration, a place, a stack, an address or a control label, it is Geist Mono at 12.5px and muted. Prose never goes mono; data never goes sans.", "section": "typography" },
+      { "name": "The No-Display Rule", "body": "There is no display size. The name is 18px; everything else is 15px or smaller. New surfaces do not introduce a larger heading.", "section": "typography" },
+      { "name": "The One-Shadow Rule", "body": "The dock is the only element that casts a shadow, because it is the only element that floats. Tiles, lists and buttons stay flat; their depth is a border change.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep every section as a plain 15px weight-500 label over a ruled list; add a section, not a card, when content grows.",
+      "Do set dates, durations, places, stacks and control text in Geist Mono at 12.5px muted (12px inside controls).",
+      "Do reach for hairline first and hairline-strong only for hover, chrome and graph links.",
+      "Do spend ember only on live state, and keep the 6px live dot as the marker for \"now\".",
+      "Do add new widgets as 200px-tall, 14px-radius surface tiles in the widget row, with a muted caption pinned to the bottom.",
+      "Do re-map new colours in all three schemes (dark root, [data-theme=\"light\"], @media print) and read them through custom properties, including inside canvas.",
+      "Do confine motion to instruments and 150–200ms colour fades, and honour prefers-reduced-motion (all transitions and animations off)."
+    ],
+    "donts": [
+      "Don't introduce a hero, a display size, or any heading larger than the 18px name.",
+      "Don't set section labels in uppercase, tracked caps, or as eyebrows; they are sentence-case foreground sans.",
+      "Don't use ember for links, headings, buttons at rest, or decoration.",
+      "Don't add shadows to tiles, lists or buttons; the dock is the only floating element.",
+      "Don't box list content in cards or add vertical rules; lists are separated by horizontal hairlines only.",
+      "Don't underline links at rest; underline appears on hover only.",
+      "Don't use icon fonts or glyph characters; icons are 14px inline SVG outlines at 1.4 stroke."
+    ]
+  }
+}
