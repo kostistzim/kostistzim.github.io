@@ -108,6 +108,7 @@ p:last-child { margin-bottom: 0; }
 .email__copy:hover { color: var(--fg); background: var(--surface); }
 .email__copy:active { transform: translateY(1px); }
 .email__state { color: var(--accent); }
+.email__state--failed { color: var(--muted); }
 .live { display: inline-block; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-right: 9px; vertical-align: 1px; box-shadow: 0 0 0 3px var(--accent-soft); animation: breathe 3.2s var(--ease) infinite; }
 @keyframes breathe { 50% { box-shadow: 0 0 0 5px transparent; } }
 
