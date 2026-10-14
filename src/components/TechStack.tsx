@@ -10,12 +10,12 @@ export default function TechStack() {
       {stack.map((g) => (
         <div key={g.label} className="stack__group">
           <p className="stack__label">{g.label}</p>
-          <ul className="pills">
+          <ul className="tools">
             {g.items.map((it) => {
               const ic = it.icon ? lib[it.icon] : undefined;
               return (
-                <li key={it.name} className="pill">
-                  {ic ? <svg className="pill__icon" viewBox="0 0 24 24" aria-hidden="true"><path d={ic.path} /></svg> : <span className="pill__dot" aria-hidden="true" />}
+                <li key={it.name} className="tool">
+                  {ic ? <svg className="tool__icon" viewBox="0 0 24 24" aria-hidden="true"><path d={ic.path} /></svg> : <span className="tool__dot" aria-hidden="true" />}
                   {it.name}
                 </li>
               );

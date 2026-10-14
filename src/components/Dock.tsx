@@ -2,13 +2,14 @@
 import { useEffect, useState } from "react";
 
 export default function Dock({ email }: { email: string }) {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState<"idle" | "copied" | "failed">("idle");
   const [theme, setTheme] = useState<"dark" | "light">("dark");
   useEffect(() => { setTheme((document.documentElement.dataset.theme as "dark" | "light") || "dark"); }, []);
 
   const copy = async () => {
-    try { await navigator.clipboard.writeText(email); setCopied(true); setTimeout(() => setCopied(false), 1600); }
-    catch { window.location.href = `mailto:${email}`; }
+    try { await navigator.clipboard.writeText(email); setCopied("copied"); }
+    catch { setCopied("failed"); }
+    setTimeout(() => setCopied("idle"), 2000);
   };
   const toggle = () => {
     const next = theme === "dark" ? "light" : "dark";
@@ -19,7 +20,7 @@ export default function Dock({ email }: { email: string }) {
     <nav className="dock" aria-label="Page actions">
       <button type="button" className="dock__btn" onClick={copy} aria-live="polite">
         <svg className="icon" viewBox="0 0 16 16" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8" rx="1.5" /><path d="M10.5 5.5v-2a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2" /></svg>
-        {copied ? "Copied" : "Copy email"}
+        {copied === "copied" ? "Copied" : copied === "failed" ? email : "Copy email"}
       </button>
       <span className="dock__sep" aria-hidden="true" />
       <button type="button" className="dock__btn" onClick={() => window.print()}>

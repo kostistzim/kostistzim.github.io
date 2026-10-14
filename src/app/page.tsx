@@ -10,14 +10,13 @@ import Shelf from "@/components/Shelf";
 import CopyEmail from "@/components/CopyEmail";
 import { person, projects, roles, education, activities, thesis } from "@/lib/content";
 import { range, duration } from "@/lib/dates";
-import { getContributions, getRepos, getRepoMeta } from "@/lib/github";
+import { getContributions, getRepoMeta } from "@/lib/github";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-const when = (iso: string) => { const d = new Date(iso); return `${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`; };
 
 export default async function Page() {
   const now = new Date();
-  const [contrib, gh, meta] = await Promise.all([getContributions(), getRepos(), getRepoMeta(projects.map((p) => p.repo))]);
+  const [contrib, meta] = await Promise.all([getContributions(), getRepoMeta(projects.map((p) => p.repo))]);
   const built = `${MONTHS[now.getUTCMonth()]} ${now.getUTCFullYear()}`;
 
   return (
@@ -29,7 +28,7 @@ export default async function Page() {
         <p className="role">{person.role}</p>
 
         <section className="block" aria-labelledby="currently">
-          <h2 id="currently" className="label">Currently</h2>
+          <h2 id="currently" className="label label--live"><i className="live" aria-hidden="true" />Currently</h2>
           <p>
             Building knowledge-grounded AI systems: LLM pipelines with typed interfaces, retrieval and knowledge graphs, on data systems I understand from first principles. {person.availability}
           </p>
@@ -117,22 +116,14 @@ export default async function Page() {
       <section className="block" id="activity" aria-labelledby="h-activity">
         <h2 id="h-activity" className="label">Activity</h2>
         <Contributions days={contrib.days} total={contrib.total} live={contrib.live} />
-        <ol className="list list--tight">
-          {gh.repos.map((r) => (
-            <li key={r.name} className="item item--row">
-              <a href={r.url} className="item__title">{r.name}</a>
-              <span className="mono item__meta">{[r.language, when(r.pushedAt)].filter(Boolean).join(" · ")}</span>
-            </li>
-          ))}
-        </ol>
-        {!gh.live && <p className="mono note">Repository list from a saved snapshot.</p>}
+        <p className="more"><a href={person.github}>All repositories on GitHub</a></p>
       </section>
 
       <footer className="block footer" id="contact">
         <h2 className="label">Contact</h2>
-        <p>Email is the quickest way. I'm in {person.city} and open to applied AI, ML engineering and data science roles here.</p>
+        <p className="footer__lede">Email is the quickest way. I'm in {person.city} and open to applied AI, ML engineering and data science roles here. {person.availability}</p>
+        <CopyEmail email={person.email} size="large" />
         <p className="mono footer__links">
-          <a href={`mailto:${person.email}`}>{person.email}</a>
           <a href={person.github}>GitHub</a>
           <a href={person.linkedin}>LinkedIn</a>
         </p>

@@ -28,6 +28,7 @@ function Grid({ days, total, cell, gap }: { days: Day[]; total: number; cell: nu
 }
 
 export default function Contributions({ days, total, live }: { days: Day[]; total: number; live: boolean }) {
+  if (!days.length) return <p className="note">GitHub activity could not be loaded for this build.</p>;
   return (
     <figure className="contrib">
       <div className="contrib__scroll" dir="rtl"><div dir="ltr"><Grid days={days} total={total} cell={10} gap={3} /></div></div>
