@@ -2,10 +2,14 @@ import Clock from "@/components/Clock";
 import NowPlaying from "@/components/NowPlaying";
 import Contributions from "@/components/Contributions";
 import Dock from "@/components/Dock";
+import Reading from "@/components/Reading";
+import DanishWord from "@/components/DanishWord";
+import Problems from "@/components/Problems";
 import CopyEmail from "@/components/CopyEmail";
 import { person, projects, roles, education, skills, activities, thesis } from "@/lib/content";
 import { range, duration } from "@/lib/dates";
 import { getContributions, getRepos } from "@/lib/github";
+import { getDays, prettyDate } from "@/lib/daily";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const when = (iso: string) => { const d = new Date(iso); return `${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`; };
@@ -13,6 +17,7 @@ const when = (iso: string) => { const d = new Date(iso); return `${MONTHS[d.getU
 export default async function Page() {
   const now = new Date();
   const [contrib, gh] = await Promise.all([getContributions(), getRepos()]);
+  const today = getDays()[0];
   const built = `${MONTHS[now.getUTCMonth()]} ${now.getUTCFullYear()}`;
 
   return (
@@ -35,6 +40,13 @@ export default async function Page() {
       <section className="widgets" aria-label="Live widgets">
         <Clock />
         <NowPlaying />
+        <Reading />
+        <DanishWord d={today.danish} />
+      </section>
+
+      <section className="block" id="today" aria-labelledby="h-today">
+        <h2 id="h-today" className="label">Today, {prettyDate(today.date)}</h2>
+        <Problems day={today} archiveLink />
       </section>
 
       <section className="block" id="projects" aria-labelledby="h-projects">

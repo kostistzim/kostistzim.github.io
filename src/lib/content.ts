@@ -167,3 +167,11 @@ export const thesis = {
   text:
     "Planned in collaboration with Amass. The likely direction is knowledge-grounded AI for life-science workflows: biomedical knowledge graphs, ontology-based integration, provenance, retrieval and LLM reasoning. Neither the title nor the final scope is fixed yet.",
 };
+
+export const reading = {
+  title: "Designing Data-Intensive Applications",
+  author: "Martin Kleppmann",
+  isbn: "9781449373320",
+  url: "https://openlibrary.org/isbn/9781449373320",
+  since: "2026",
+};

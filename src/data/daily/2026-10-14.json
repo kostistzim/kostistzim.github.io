@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-14",
+  "source": "hand",
+  "danish": {
+    "word": "overskud",
+    "pronunciation": "OW-er-skooth (soft d)",
+    "meaning": "Spare energy or headspace; literally a surplus.",
+    "example": "Jeg har ikke overskud til det i dag.",
+    "translation": "I don't have the energy for it today.",
+    "note": "Danes use it for mental capacity as much as money; 'at have overskud' is a compliment about someone who stays calm and generous under pressure."
+  },
+  "maths": {
+    "kind": "theorem",
+    "title": "Bounded monotone sequences converge",
+    "text": "If a sequence of real numbers never decreases and never exceeds some bound M, it converges. Why: the set of its values has a least upper bound L by the completeness of the reals. For any ε > 0, L − ε is not an upper bound, so some term exceeds L − ε, and every later term sits between that term and L. So the terms are eventually within ε of L. It is the reason decimal expansions make sense: 0.3, 0.33, 0.333, … is bounded and increasing, so it has a limit, and that limit is 1/3."
+  },
+  "coding": {
+    "title": "Longest substring without repeating characters",
+    "difficulty": "medium",
+    "topic": "sliding window, hashing",
+    "statement": "Given a string s of length up to 100 000 made of ASCII characters, return the length of the longest contiguous substring that contains no repeated character.",
+    "examples": [
+      { "input": "s = \"abcabcbb\"", "output": "3", "note": "\"abc\" is the longest such substring." },
+      { "input": "s = \"bbbbb\"", "output": "1", "note": null },
+      { "input": "s = \"pwwkew\"", "output": "3", "note": "\"wke\"; note that \"pwke\" is a subsequence, not a substring." }
+    ],
+    "approach": "Slide a window [left, right] over the string and keep, for every character, the last index where it appeared. When the character at right was last seen inside the window, move left just past that index. The window is then always free of repeats, and its width is a candidate answer. Each index enters and leaves the window at most once.",
+    "code": "def length_of_longest_substring(s: str) -> int:\n    last = {}          # character -> last index seen\n    left = 0           # window start\n    best = 0\n    for right, ch in enumerate(s):\n        if ch in last and last[ch] >= left:\n            left = last[ch] + 1   # jump past the earlier copy\n        last[ch] = right\n        best = max(best, right - left + 1)\n    return best",
+    "complexity": "O(n) time, O(min(n, alphabet)) space."
+  },
+  "olympiad": {
+    "title": "Three of five",
+    "difficulty": "easy",
+    "topic": "number theory, pigeonhole",
+    "statement": "Prove that among any five integers one can always choose three whose sum is divisible by 3.",
+    "solution": "Sort the five integers by their remainder on division by 3; each remainder is 0, 1 or 2.\n\nCase 1: all three remainders occur. Pick one integer with remainder 0, one with remainder 1 and one with remainder 2. Their sum has remainder 0 + 1 + 2 = 3 ≡ 0 (mod 3), so it is divisible by 3.\n\nCase 2: at most two remainders occur. Five integers are spread over at most two remainder classes, so by the pigeonhole principle some class contains at least three of them. Three integers with the same remainder r have sum with remainder 3r ≡ 0 (mod 3), so again the sum is divisible by 3.\n\nIn both cases three integers with sum divisible by 3 exist. Five is sharp: the four integers 0, 0, 1, 1 have no such triple."
+  }
+}
