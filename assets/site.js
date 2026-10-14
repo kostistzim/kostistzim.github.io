@@ -53,6 +53,9 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", function () { current = null; pick(); });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { current = null; pick(); });
+  // Re-place the marker whenever the page reflows (font swap, image load, feed update).
+  if ("ResizeObserver" in window) new ResizeObserver(function () { current = null; pick(); }).observe(main);
+  window.addEventListener("load", function () { current = null; pick(); });
   if (reduceMotion) marker.style.transition = "none";
   pick();
 

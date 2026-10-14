@@ -243,7 +243,7 @@ h3 { font-size: 1.125rem; font-weight: 600; margin-bottom: 0.3em; }
   font-family: var(--mono); font-size: 12.5px; color: var(--ink-2); letter-spacing: 0.01em;
 }
 .row__stack li { margin: 0; white-space: nowrap; }
-.row__stack li + li::before { content: "·"; margin: 0 0.5em; }
+.row__stack li:not(:last-child)::after { content: "·"; margin: 0 0.5em; }
 
 /* Definition grid: skills, activities --------------------------------- */
 .grid { margin: 0 0 2.4em; max-width: var(--measure); border-top: 1px solid var(--rule); }
@@ -310,7 +310,8 @@ h3 { font-size: 1.125rem; font-weight: 600; margin-bottom: 0.3em; }
   .masthead__portrait { width: 72pt; height: 72pt; border-width: 3pt; box-shadow: none; }
   .btn { min-height: 0; padding: 0; border: 0; text-transform: none; letter-spacing: 0; font-size: 10pt; background: none !important; color: var(--ink) !important; }
   .contact { gap: 0; }
-  .contact li + li::before { content: " · "; font-family: var(--mono); font-size: 10pt; }
+  .contact li { white-space: nowrap; }
+  .contact li:nth-last-child(n+3)::after { content: "·"; font-family: var(--mono); font-size: 10pt; margin: 0 0.5em; }
   .masthead a[href^="mailto:"] { font-size: 0; }
   .masthead a[href^="mailto:"]::after { content: "Email kostis.tzim@gmail.com"; font-size: 10pt; }
   .masthead a[href^="https://github"]::after { content: " github.com/kostistzim"; }
