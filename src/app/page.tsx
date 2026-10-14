@@ -4,20 +4,20 @@ import Contributions from "@/components/Contributions";
 import Dock from "@/components/Dock";
 import Reading from "@/components/Reading";
 import DanishWord from "@/components/DanishWord";
-import Problems from "@/components/Problems";
+import ProjectList from "@/components/ProjectList";
+import TechStack from "@/components/TechStack";
+import Shelf from "@/components/Shelf";
 import CopyEmail from "@/components/CopyEmail";
-import { person, projects, roles, education, skills, activities, thesis } from "@/lib/content";
+import { person, projects, roles, education, activities, thesis } from "@/lib/content";
 import { range, duration } from "@/lib/dates";
-import { getContributions, getRepos } from "@/lib/github";
-import { getDays, prettyDate } from "@/lib/daily";
+import { getContributions, getRepos, getRepoMeta } from "@/lib/github";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const when = (iso: string) => { const d = new Date(iso); return `${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`; };
 
 export default async function Page() {
   const now = new Date();
-  const [contrib, gh] = await Promise.all([getContributions(), getRepos()]);
-  const today = getDays()[0];
+  const [contrib, gh, meta] = await Promise.all([getContributions(), getRepos(), getRepoMeta(projects.map((p) => p.repo))]);
   const built = `${MONTHS[now.getUTCMonth()]} ${now.getUTCFullYear()}`;
 
   return (
@@ -41,28 +41,13 @@ export default async function Page() {
         <Clock />
         <NowPlaying />
         <Reading />
-        <DanishWord d={today.danish} />
+        <DanishWord />
       </section>
 
-      <section className="block" id="today" aria-labelledby="h-today">
-        <h2 id="h-today" className="label">Today, {prettyDate(today.date)}</h2>
-        <Problems day={today} archiveLink />
-      </section>
 
       <section className="block" id="projects" aria-labelledby="h-projects">
         <h2 id="h-projects" className="label">Projects</h2>
-        <ol className="list">
-          {projects.map((p) => (
-            <li key={p.name} className="item">
-              <div className="item__head">
-                <a href={p.url} className="item__title">{p.name}</a>
-                <span className="mono item__meta">{p.year}</span>
-              </div>
-              <p className="item__line">{p.line}</p>
-              <p className="mono item__stack">{p.stack.join(" · ")}</p>
-            </li>
-          ))}
-        </ol>
+        <ProjectList projects={projects} meta={meta} />
         <p className="more"><a href={person.github}>More on GitHub</a></p>
       </section>
 
@@ -103,16 +88,18 @@ export default async function Page() {
         </ol>
       </section>
 
-      <section className="block" id="skills" aria-labelledby="h-skills">
-        <h2 id="h-skills" className="label">Skills</h2>
+      <section className="block" id="stack" aria-labelledby="h-stack">
+        <h2 id="h-stack" className="label">Tech stack</h2>
+        <TechStack />
         <dl className="skills">
-          {skills.map((s) => (
-            <div key={s.label} className="skills__row">
-              <dt>{s.label}</dt>
-              <dd>{s.items.join(", ")}</dd>
-            </div>
-          ))}
+          <div className="skills__row"><dt>Spoken</dt><dd>Greek (native), English (full professional), Danish (learning)</dd></div>
         </dl>
+      </section>
+
+      <section className="block" id="shelf" aria-labelledby="h-shelf">
+        <h2 id="h-shelf" className="label">On the desk</h2>
+        <p className="lede">Books I keep coming back to.</p>
+        <Shelf />
       </section>
 
       <section className="block" id="also" aria-labelledby="h-also">

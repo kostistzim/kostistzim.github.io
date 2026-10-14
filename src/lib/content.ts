@@ -11,8 +11,10 @@ export const person = {
 
 export type Project = {
   name: string;
+  repo: string; // GitHub repository name, for the live preview card
   url: string;
   year: string;
+  badge?: string; // one short, true claim
   line: string;
   stack: string[];
 };
@@ -20,6 +22,8 @@ export type Project = {
 export const projects: Project[] = [
   {
     name: "NLP, LLMOps & Knowledge Graphs",
+    repo: "NLP-LLMOps-KnowledgeGraphs-DTU",
+    badge: "Seven services, one compose file",
     url: "https://github.com/kostistzim/NLP-LLMOps-KnowledgeGraphs-DTU",
     year: "2026",
     line:
@@ -28,6 +32,8 @@ export const projects: Project[] = [
   },
   {
     name: "Data systems from first principles",
+    repo: "data-systems-from-first-principles",
+    badge: "DTU special course",
     url: "https://github.com/kostistzim/data-systems-from-first-principles",
     year: "2026",
     line:
@@ -36,6 +42,8 @@ export const projects: Project[] = [
   },
   {
     name: "Winning Ticket Hypothesis study",
+    repo: "Winning-Ticket-Hypothesis-Study",
+    badge: "LeNet to BERT",
     url: "https://github.com/kostistzim/Winning-Ticket-Hypothesis-Study",
     year: "2025",
     line:
@@ -44,6 +52,8 @@ export const projects: Project[] = [
   },
   {
     name: "Plant leaf classification, end-to-end MLOps",
+    repo: "Plant_Leaves_Classification_MLOps_DTU02476",
+    badge: "Group of five",
     url: "https://github.com/kostistzim/Plant_Leaves_Classification_MLOps_DTU02476",
     year: "2025",
     line:
@@ -52,6 +62,8 @@ export const projects: Project[] = [
   },
   {
     name: "Mortality prediction with Mamba on ICU time series",
+    repo: "EHR-Mamba-Classification-on-ICU-Data",
+    badge: "PhysioNet 2012",
     url: "https://github.com/kostistzim/EHR-Mamba-Classification-on-ICU-Data",
     year: "2024",
     line:
@@ -175,3 +187,33 @@ export const reading = {
   url: "https://openlibrary.org/isbn/9781449373320",
   since: "2026",
 };
+
+/** Words and phrases from Danish class and daily life, newest last. Add one whenever you learn one. */
+export const danishWords = [
+  { word: "overskud", pronunciation: "OW-er-skooth", meaning: "Spare energy or headspace; literally a surplus.", example: "Jeg har ikke overskud til det i dag.", translation: "I don't have the energy for it today." },
+  { word: "hyggelig", pronunciation: "HOO-geh-lee", meaning: "Cosy, warm, pleasant; the adjective of hygge.", example: "Det var en hyggelig aften.", translation: "It was a cosy evening." },
+  { word: "pyt", pronunciation: "pewt", meaning: "Never mind, let it go; a one-word shrug.", example: "Pyt med det.", translation: "Never mind that." },
+  { word: "arbejdsglæde", pronunciation: "AR-bides-gleh-the", meaning: "Joy in one's work.", example: "Der er meget arbejdsglæde på holdet.", translation: "There is a lot of joy in the work on the team." },
+  { word: "at tage sig sammen", pronunciation: "ta sai SAM-en", meaning: "To pull oneself together.", example: "Jeg må tage mig sammen og skrive specialet.", translation: "I have to pull myself together and write the thesis." },
+  { word: "selvfølgelig", pronunciation: "sel-FUHL-lee", meaning: "Of course.", example: "Selvfølgelig kommer jeg til træning.", translation: "Of course I'm coming to training." },
+  { word: "træning", pronunciation: "TRAI-ning", meaning: "Training, practice; what you go to at the jiu-jitsu club.", example: "Vi har træning klokken syv.", translation: "We have training at seven." },
+];
+
+/** Books on the desk. Covers come from Open Library by ISBN. */
+export const shelf = [
+  { title: "Designing Data-Intensive Applications", author: "Martin Kleppmann", isbn: "9781449373320", note: "The book the special course was built on." },
+  { title: "Build a Large Language Model (From Scratch)", author: "Sebastian Raschka", isbn: "9781633437166", note: "Every layer typed out by hand." },
+  { title: "Machine Learning Q and AI", author: "Sebastian Raschka", isbn: "9781718503762", note: "Thirty questions, read one at a time." },
+  { title: "Grokking Concurrency", author: "Kirill Bobrov", isbn: "9781633439771", note: "For the async backends." },
+  { title: "Agentic Design Patterns", author: "Antonio Gulli", isbn: "9783032014023", note: "On the current stack of things to try." },
+  { title: "Algorithm Design", author: "Jon Kleinberg and Éva Tardos", isbn: "9780321295354", note: "Kept from the mathematics years." },
+];
+
+/** Tools, grouped, with Simple Icons slugs where one exists. */
+export const stack: { label: string; items: { name: string; icon?: string }[] }[] = [
+  { label: "Languages", items: [{ name: "Python", icon: "siPython" }, { name: "SQL", icon: "siPostgresql" }, { name: "TypeScript", icon: "siTypescript" }, { name: "LaTeX", icon: "siLatex" }] },
+  { label: "ML and data", items: [{ name: "PyTorch", icon: "siPytorch" }, { name: "PyTorch Lightning", icon: "siLightning" }, { name: "scikit-learn", icon: "siScikitlearn" }, { name: "NumPy", icon: "siNumpy" }, { name: "pandas", icon: "siPandas" }, { name: "Jupyter", icon: "siJupyter" }, { name: "Hugging Face", icon: "siHuggingface" }] },
+  { label: "LLM systems", items: [{ name: "Claude", icon: "siClaude" }, { name: "BAML" }, { name: "RAG" }, { name: "Wikidata", icon: "siWikidata" }, { name: "FAISS" }, { name: "NetworkX" }] },
+  { label: "Backend and cloud", items: [{ name: "FastAPI", icon: "siFastapi" }, { name: "Docker", icon: "siDocker" }, { name: "Google Cloud", icon: "siGooglecloud" }, { name: "Redis", icon: "siRedis" }, { name: "GitHub Actions", icon: "siGithubactions" }, { name: "Linux", icon: "siLinux" }] },
+  { label: "MLOps", items: [{ name: "MLflow", icon: "siMlflow" }, { name: "DVC", icon: "siDvc" }, { name: "Weights & Biases", icon: "siWeightsandbiases" }, { name: "Hydra" }, { name: "Streamlit", icon: "siStreamlit" }, { name: "Git", icon: "siGit" }] },
+];

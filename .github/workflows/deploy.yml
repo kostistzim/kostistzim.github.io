@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -26,20 +26,6 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - name: Generate today's Danish word, maths item and problems
-        run: node scripts/daily.mjs
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          DAILY_MODEL: ${{ vars.DAILY_MODEL }}
-      - name: Commit today's content
-        run: |
-          if [ -n "$(git status --porcelain src/data/daily)" ]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add src/data/daily
-            git commit -m "daily: $(date -u +%F)"
-            git push
-          fi
       - run: npm run build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

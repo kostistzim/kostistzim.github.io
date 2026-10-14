@@ -34,6 +34,24 @@ export async function getContributions(): Promise<{ days: Day[]; total: number; 
   }
 }
 
+export type RepoMeta = { name: string; description: string | null; language: string | null; stars: number; pushedAt: string; url: string };
+
+/** Metadata for the named repositories, for the project preview cards; empty map when offline. */
+export async function getRepoMeta(names: string[]): Promise<Record<string, RepoMeta>> {
+  try {
+    const headers: Record<string, string> = { Accept: "application/vnd.github+json", "User-Agent": "kostistzim.github.io build" };
+    if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+    const res = await fetch(`https://api.github.com/users/${USER}/repos?per_page=100`, { headers, cache: "no-store" });
+    if (!res.ok) throw new Error(String(res.status));
+    const all = (await res.json()) as Array<{ name: string; html_url: string; description: string | null; language: string | null; pushed_at: string; stargazers_count: number }>;
+    const out: Record<string, RepoMeta> = {};
+    for (const r of all) if (names.includes(r.name)) out[r.name] = { name: r.name, description: r.description, language: r.language, stars: r.stargazers_count, pushedAt: r.pushed_at, url: r.html_url };
+    return out;
+  } catch {
+    return {};
+  }
+}
+
 /** Recently pushed, non-fork repositories; falls back to the committed snapshot. */
 export async function getRepos(): Promise<{ repos: Repo[]; live: boolean }> {
   try {

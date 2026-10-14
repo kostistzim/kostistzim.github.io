@@ -8,12 +8,11 @@
     "start": "next start"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.134.0",
     "geist": "^1.7.2",
     "next": "^16.4.1",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
-    "zod": "^4.6.7"
+    "simple-icons": "^16.35.0"
   },
   "devDependencies": {
     "@types/node": "^20.19.43",
