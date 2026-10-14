@@ -128,7 +128,7 @@ components:
 
 **Creative North Star: "The Notebook with Instruments"**
 
-The page is a single sheet of near-black paper read top to bottom like a CV, and it prints as one. Every section is a plain label above a ruled list; the type is small, the column is narrow, and nothing on the sheet asks for attention except the things that are actually alive. Those live things sit in one row of small working instruments under the intro (a ticking Copenhagen clock, a Last.fm now-playing card, a force-directed thesis graph) and a year of real GitHub contributions further down. Proof is shown as working things, not claimed.
+The page is a single sheet of near-black paper read top to bottom like a CV, and it prints as one. Every section is a plain label above a ruled list; the type is small, the column is narrow, and nothing on the sheet asks for attention except the things that are actually alive. Those live things sit in one row of small working instruments under the intro (a ticking Copenhagen clock and a Last.fm now-playing card) and a year of real GitHub contributions further down. Proof is shown as working things, not claimed.
 
 Density is editorial and quiet: 15px Geist Sans body with generous 1.6 leading, 12.5px Geist Mono for every fact that is a date, a duration, a stack or a control. The build rejects the loud portfolio hero, decorative gradients, the card grid, and the transit line of the previous build. Depth comes from one tonal step (ground to surface) and 1px hairlines; the only shadow in the system is under the floating dock.
 
@@ -147,7 +147,7 @@ Colour is a discipline rather than a palette. One ember accent exists and is spe
 A near-black notebook with one warm ember spark; the light scheme is the same page under daylight.
 
 ### Primary
-- **Ember** (`{colors.ember}`): the only chromatic colour. Spent exclusively on live state: the clock's second hand and pivot, the 6px live dot next to a current role or a playing track, disease nodes in the thesis graph, the four intensity steps of the contribution graph (fill-opacity 0.32 / 0.55 / 0.78 / 1), the "Copied" confirmation text, the caret, text selection and the focus ring. In the light scheme it deepens to `{colors.light-ember}` for contrast on white.
+- **Ember** (`{colors.ember}`): the only chromatic colour. Spent exclusively on live state: the clock's second hand and pivot, the 6px live dot next to a current role or a playing track, the four intensity steps of the contribution graph (fill-opacity 0.32 / 0.55 / 0.78 / 1), the "Copied" confirmation text, the caret, text selection and the focus ring. In the light scheme it deepens to `{colors.light-ember}` for contrast on white.
 - **Ember Soft** (`{colors.ember-soft}`): an 18% ember wash used only as the 3px halo ring around the live dot.
 
 ### Neutral
@@ -196,7 +196,7 @@ Lists are ruled, not boxed: each `.item` has 14px vertical padding and a 1px hai
 
 The widget row is a `repeat(auto-fit, minmax(180px, 1fr))` grid with 12px gap, 40px below the intro; every tile is a fixed 200px tall so the row reads as one instrument strip. The contribution graph is one 53-week SVG at native size, 10px cells with 3px gaps and 2px radius, with 11px mono month labels above and a 12px mono caption and legend 8px below. It sits in a horizontal scroller (`.contrib__scroll`: `overflow-x: auto`, thin scrollbar, 4px bottom padding) whose outer box is `dir="rtl"` around an inner `dir="ltr"` box of `width: max-content`, so when the column is narrower than the grid it opens at the latest weeks and scrolls back in time.
 
-Responsive behaviour is scoped to screen only. At 640px and below: page padding becomes 72px / 120px with 20px gutters, the widget grid forces two columns with the graph tile spanning both at 180px, skill rows stack to one column, item heads and compact rows stack title over meta (`flex-direction: column; align-items: flex-start`), the contribution grid keeps its full width and scrolls from the latest weeks, and the dock sits 16px from the bottom. At 420px and below the widgets stack to one column at 180px tall.
+Responsive behaviour is scoped to screen only. At 640px and below: page padding becomes 72px / 120px with 20px gutters, the clock tile stretches to fill the row, skill rows stack to one column, item heads and compact rows stack title over meta (`flex-direction: column; align-items: flex-start`), the contribution grid keeps its full width and scrolls from the latest weeks, and the dock sits 16px from the bottom. At 420px and below the tiles are 180px tall.
 
 Print is a fourth layout: `@page` margins 16mm / 14mm, body 10.5pt with 1.45 leading, the column goes full width, blocks space at 18pt, items at 7pt, and the widgets, dock, skip link, copy button, activity section, "more" and note lines are removed. Project and footer links print their `href` in 8–8.5pt mono after the text.
 
@@ -229,7 +229,7 @@ Widget tiles are the only cards, and they exist to hold instruments, not text.
 - **Background:** surface.
 - **Shadow Strategy:** none; hover steps the border to hairline-strong (see Elevation & Depth).
 - **Border:** 1px hairline.
-- **Internal Padding:** 14px; the graph tile is edge-to-edge (0) with its caption absolutely placed 14px from the edges.
+- **Internal Padding:** 14px.
 - **Caption:** a 12.5px muted flex row, name left, mono value right, baseline-aligned, pinned to the bottom. Every tile carries one, including the music tile; there is no other label style inside tiles.
 
 ### Lists
@@ -254,7 +254,6 @@ The dock is the page's whole navigation: three actions, not links.
 ### Instruments (signature)
 - **Clock:** an SVG dial filling the tile; sixty tick marks (foreground at 2 stroke every fifth, muted at 1 otherwise), foreground hour and minute hands at 4 and 2.5 stroke, an ember second hand at 1.25 stroke that eases between ticks over 200ms, and an ember pivot. Caption: "Copenhagen" left, mono time right.
 - **Now playing:** 64px album art at 8px radius (hairline stripe placeholder when absent), a 500-weight title and a 13px muted artist line, both single-line with ellipsis. The same bottom caption as the other tiles carries the state ("Now playing" with the live dot, "Last played", or "Music" when idle) left and mono "Last.fm" right. The whole tile is a link that does not underline.
-- **Thesis graph:** a canvas force layout reading `--fg`, `--muted`, `--hairline-strong` and `--accent` from computed style so it re-themes live; hairline-strong links, muted nodes, foreground near the pointer, ember for disease nodes. Caption: "Thesis: knowledge graphs" left, mono "demo data" right.
 - **Contributions:** a single 53-week SVG grid of 10px cells at 3px gaps with 2px radius inside a right-anchored horizontal scroller (opens at the latest weeks on narrow screens), hairline for zero and ember at 0.32 / 0.55 / 0.78 / 1 opacity for the four levels, 11px mono month labels, and a 12px mono caption with a Less–More legend.
 
 ## Do's and Don'ts
@@ -265,7 +264,7 @@ The dock is the page's whole navigation: three actions, not links.
 - **Do** reach for `hairline` first and `hairline-strong` only for hover, chrome and graph links.
 - **Do** spend ember only on live state, and keep the 6px live dot as the marker for "now".
 - **Do** add new widgets as 200px-tall, 14px-radius surface tiles in the widget row, with a muted caption pinned to the bottom.
-- **Do** re-map new colours in all three schemes (dark root, `[data-theme="light"]`, `@media print`) and read them through custom properties, including inside canvas.
+- **Do** re-map new colours in all three schemes (dark root, `[data-theme="light"]`, `@media print`) and read them through custom properties.
 - **Do** confine motion to instruments and 150–200ms colour fades, and honour `prefers-reduced-motion` (all transitions and animations off).
 
 ### Don't:

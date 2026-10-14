@@ -1,6 +1,5 @@
 import Clock from "@/components/Clock";
 import NowPlaying from "@/components/NowPlaying";
-import ThesisGraph from "@/components/ThesisGraph";
 import Contributions from "@/components/Contributions";
 import Dock from "@/components/Dock";
 import CopyEmail from "@/components/CopyEmail";
@@ -36,7 +35,6 @@ export default async function Page() {
       <section className="widgets" aria-label="Live widgets">
         <Clock />
         <NowPlaying />
-        <ThesisGraph />
       </section>
 
       <section className="block" id="projects" aria-labelledby="h-projects">

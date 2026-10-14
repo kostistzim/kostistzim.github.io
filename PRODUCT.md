@@ -47,7 +47,7 @@ A mathematician (BSc Mathematics, Athens) who moved into applied AI engineering 
 - Voice: plain, factual, first person singular, no hype and no claims beyond the CV. Early-career honesty: internships and student roles are described as such.
 - Asset: GitHub avatar portrait.
 - Pinned visual reference (user, 2026-10-14): ashishgogula.in. A quiet, dark, single narrow column with small type, plain section labels, ruled lists, a row of small live widgets under the intro, and a GitHub contribution graph. The user wants the site to feel like that reference, not a copy of it.
-- Widgets the user asked for: Copenhagen clock, now-playing music (needs a Last.fm or Spotify account connected), a thesis knowledge-graph mini-visualisation (synthetic demo data, labelled), GitHub contribution graph. More ideas later, possibly around no-gi jiu-jitsu.
+- Widgets the user asked for: Copenhagen clock, now-playing music (needs a Last.fm account connected), GitHub contribution graph. The thesis knowledge-graph widget was removed on 2026-10-14: the thesis is private work and must not be visualised or described beyond the hedged Thesis section. More ideas later, possibly around no-gi jiu-jitsu.
 
 ## Evidence on Hand
 
