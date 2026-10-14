@@ -176,7 +176,7 @@ Light scheme (`:root[data-theme="light"]`) swaps the six neutrals to `{colors.li
 ### Hierarchy
 - **Name** (500, 18px, 1.3, -0.01em): the h1 only, once, at the top of the sheet. Print raises it to 20pt.
 - **Label** (500, 15px, 1.6, -0.005em): every section heading (`Currently`, `Projects`, `Experience`...), set in foreground sans with 12px below. Same size as body; weight alone separates it. Not uppercase, not tracked, not an eyebrow.
-- **Body** (400, 15px, 1.6): prose paragraphs, list titles (titles carry weight 500), skill values, footer. Paragraphs space at 0.9em. The 680px column caps lines at roughly 80 characters.
+- **Body** (400, 15px, 1.6): prose paragraphs, list titles (titles carry weight 500), skill values, footer. Paragraphs space at 0.9em. The 680px column caps lines at roughly 80 characters. The role line and intro paragraphs use `text-wrap: pretty` so short last lines do not orphan.
 - **Body Small** (400, 13px, 1.6): the artist line inside the music tile.
 - **Mono** (400, 12.5px, 0.005em): the `.mono` class. Years, places, date ranges, durations, stacks, the email address, the contact links, the "built" line, tile captions' right-hand value. Always muted unless it is a link in the footer.
 - **Mono Control** (400, 12px): text inside the dock buttons, the copy button, the skip link, the contribution caption.
@@ -192,11 +192,11 @@ Numerals are tabular everywhere (`font-variant-numeric: tabular-nums` on body), 
 
 One centred column, `max-width: 680px`, padded 112px top and 140px bottom (the bottom clearance keeps the fixed dock off the last section) with 24px side gutters. The intro (name, role, `Currently`, email) sits at the top with the role line carrying 40px below it; every following section is a `.block` with 56px above. Inside a section the label has 12px below it and the list follows directly.
 
-Lists are ruled, not boxed: each `.item` has 14px vertical padding and a 1px hairline on top, with the last item also closing with a hairline. The head row is a flex row with 16px gap, title left, mono meta right, baseline-aligned; sub-lines follow at 2–6px. Compact rows (`.item--row`, used for the repository list) drop to 10px padding. The skills list is a two-column definition grid, 170px label column and 16px gap, 9px row padding, same hairline rules.
+Lists are ruled, not boxed: each `.item` has 14px vertical padding and a 1px hairline on top, with the last item also closing with a hairline. The head row is a flex row with 16px gap, title left, mono meta right, baseline-aligned; sub-lines follow at 2–6px. Compact rows (`.item--row`, used for the repository list) drop to 10px padding. The skills list is a two-column definition grid, 170px label column and 16px gap, 9px row padding, same hairline rules; the `Also` section reuses the same grid for activities with a mono date in the label column. Compact rows and list titles are allowed to wrap (`flex-wrap: wrap`, 2px row gap; `overflow-wrap: anywhere` on titles) so long repository names never overflow the column.
 
-The widget row is a `repeat(auto-fit, minmax(180px, 1fr))` grid with 12px gap, 40px below the intro; every tile is a fixed 200px tall so the row reads as one instrument strip. The contribution graph is an SVG of 2px-radius cells with a mono caption and legend 8px below.
+The widget row is a `repeat(auto-fit, minmax(180px, 1fr))` grid with 12px gap, 40px below the intro; every tile is a fixed 200px tall so the row reads as one instrument strip. The contribution graph is rendered twice as SVG at native size, 10px cells with 3px gaps and 2px radius: a 53-week grid (`.contrib__wide`) and a 26-week grid (`.contrib__narrow`), with 11px mono month labels above and a 12px mono caption and legend 8px below. Only one grid is shown at a time.
 
-Responsive behaviour is scoped to screen only. At 640px and below: page padding becomes 72px / 120px with 20px gutters, the widget grid forces two columns with the graph tile spanning both at 180px, skill rows stack to one column, item heads stack title over meta, and the dock sits 16px from the bottom. At 420px and below the widgets stack to one column at 180px tall.
+Responsive behaviour is scoped to screen only. At 640px and below: page padding becomes 72px / 120px with 20px gutters, the widget grid forces two columns with the graph tile spanning both at 180px, skill rows stack to one column, item heads stack title over meta, the 53-week contribution grid is swapped for the 26-week one, and the dock sits 16px from the bottom. At 420px and below the widgets stack to one column at 180px tall.
 
 Print is a fourth layout: `@page` margins 16mm / 14mm, body 10.5pt with 1.45 leading, the column goes full width, blocks space at 18pt, items at 7pt, and the widgets, dock, skip link, copy button, activity section, "more" and note lines are removed. Project and footer links print their `href` in 8–8.5pt mono after the text.
 
@@ -230,7 +230,7 @@ Widget tiles are the only cards, and they exist to hold instruments, not text.
 - **Shadow Strategy:** none; hover steps the border to hairline-strong (see Elevation & Depth).
 - **Border:** 1px hairline.
 - **Internal Padding:** 14px; the graph tile is edge-to-edge (0) with its caption absolutely placed 14px from the edges.
-- **Caption:** a 12.5px muted flex row, name left, mono value right, baseline-aligned, pinned to the bottom.
+- **Caption:** a 12.5px muted flex row, name left, mono value right, baseline-aligned, pinned to the bottom. Every tile carries one, including the music tile; there is no other label style inside tiles.
 
 ### Lists
 The workhorse of the page: every section's content is a ruled list.
@@ -241,7 +241,7 @@ The workhorse of the page: every section's content is a ruled list.
 ### Navigation
 The dock is the page's whole navigation: three actions, not links.
 - **Style:** fixed, bottom centre, 24px from the bottom (16px under 640px), a surface pill with a 1px hairline-strong border, 4px padding, 2px between buttons, 1px × 16px hairline-strong separators, and the single dock shadow.
-- **Typography:** 12px Geist Mono, muted at rest, foreground on hover.
+- **Typography:** 12px Geist Mono, muted at rest, foreground on hover; button labels never wrap.
 - **Actions:** copy email (icon + label, live-region confirmation), print (icon + label), theme toggle (icon only, sun or moon).
 - **Mobile:** unchanged except for the 16px bottom offset.
 
@@ -253,9 +253,9 @@ The dock is the page's whole navigation: three actions, not links.
 
 ### Instruments (signature)
 - **Clock:** an SVG dial filling the tile; sixty tick marks (foreground at 2 stroke every fifth, muted at 1 otherwise), foreground hour and minute hands at 4 and 2.5 stroke, an ember second hand at 1.25 stroke that eases between ticks over 200ms, and an ember pivot. Caption: "Copenhagen" left, mono time right.
-- **Now playing:** 64px album art at 8px radius (hairline stripe placeholder when absent), an 11px uppercase tracked status line, a 500-weight title and a 13px muted artist line, all single-line with ellipsis. The whole tile is a link that does not underline.
+- **Now playing:** 64px album art at 8px radius (hairline stripe placeholder when absent), a 500-weight title and a 13px muted artist line, both single-line with ellipsis. The same bottom caption as the other tiles carries the state ("Now playing" with the live dot, "Last played", or "Music" when idle) left and mono "Last.fm" right. The whole tile is a link that does not underline.
 - **Thesis graph:** a canvas force layout reading `--fg`, `--muted`, `--hairline-strong` and `--accent` from computed style so it re-themes live; hairline-strong links, muted nodes, foreground near the pointer, ember for disease nodes. Caption: "Thesis: knowledge graphs" left, mono "demo data" right.
-- **Contributions:** an SVG grid of 2px-radius cells, hairline for zero and ember at 0.32 / 0.55 / 0.78 / 1 opacity for the four levels, 9px mono month labels, and a 12px mono caption with a Less–More legend.
+- **Contributions:** two SVG grids (53 weeks and 26 weeks, one shown per breakpoint) of 10px cells at 3px gaps with 2px radius, hairline for zero and ember at 0.32 / 0.55 / 0.78 / 1 opacity for the four levels, 11px mono month labels, and a 12px mono caption with a Less–More legend.
 
 ## Do's and Don'ts
 

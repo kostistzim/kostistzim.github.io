@@ -28,11 +28,9 @@ function Grid({ days, total, cell, gap }: { days: Day[]; total: number; cell: nu
 }
 
 export default function Contributions({ days, total, live }: { days: Day[]; total: number; live: boolean }) {
-  const recent = days.slice(-26 * 7);
   return (
     <figure className="contrib">
-      <div className="contrib__wide"><Grid days={days} total={total} cell={10} gap={3} /></div>
-      <div className="contrib__narrow"><Grid days={recent} total={total} cell={10} gap={3} /></div>
+      <div className="contrib__scroll" dir="rtl"><div dir="ltr"><Grid days={days} total={total} cell={10} gap={3} /></div></div>
       <figcaption className="contrib__caption">
         <span>{total.toLocaleString("en-GB")} public contributions in the last year{live ? "" : " (saved snapshot)"}</span>
         <span className="contrib__legend" aria-hidden="true">Less {[0, 1, 2, 3, 4].map((l) => <i key={l} className={`contrib__swatch contrib__cell--${l}`} />)} More</span>

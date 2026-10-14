@@ -134,8 +134,10 @@ a.item__title:hover { text-decoration: underline; }
 
 /* Contributions ----------------------------------------------------------- */
 .contrib { margin: 0; }
-.contrib svg { display: block; max-width: 100%; }
-.contrib__narrow { display: none; }
+.contrib svg { display: block; }
+/* rtl on the scroller opens the year at its latest weeks; the inner ltr box keeps the grid itself left-to-right */
+.contrib__scroll { overflow-x: auto; scrollbar-width: thin; padding-bottom: 4px; }
+.contrib__scroll > div { width: max-content; }
 .contrib__month { font-family: var(--mono); font-size: 11px; fill: var(--muted); }
 .contrib__cell { fill: var(--hairline); }
 .contrib__cell--1 { fill: var(--accent); fill-opacity: 0.32; }
@@ -176,8 +178,7 @@ a.item__title:hover { text-decoration: underline; }
   .widgets { grid-template-columns: 1fr 1fr; }
   .tile--graph { grid-column: 1 / -1; height: 180px; }
   .skills__row { grid-template-columns: 1fr; gap: 2px; }
-  .contrib__wide { display: none; }
-  .contrib__narrow { display: block; }
+  .item--row { flex-direction: column; align-items: flex-start; }
   .item__head { flex-direction: column; gap: 2px; }
   .dock { bottom: 16px; }
 }
