@@ -1,7 +1,11 @@
 .DS_Store
-_site/
-.jekyll-cache/
-.ipynb_checkpoints/
+# node / next
+/node_modules
+/.next/
+/out/
+*.tsbuildinfo
+npm-debug.log*
+.env*
 # impeccable: machine-local files
 .claude/settings.local.json
 .claude/skills/impeccable/scripts/bin/

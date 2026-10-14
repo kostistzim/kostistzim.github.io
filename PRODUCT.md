@@ -10,7 +10,7 @@ web
 
 ## Stack
 
-delegated: static HTML, CSS and vanilla JavaScript served from the `main` branch of `kostistzim.github.io` by GitHub Pages, with a `.nojekyll` marker. Chosen because the brief asks for a GitHub-hosted page, the old Jekyll site is being deleted, and a dependency-free page gives full control over typography and layout with zero build step. (inferred)
+Next.js (App Router, TypeScript, static export) built by a GitHub Actions workflow and deployed to GitHub Pages; the workflow also runs on a daily schedule so build-time data (GitHub activity, repositories) stays fresh. Chosen by the user on 2026-10-14 ("Next.js like the original", referring to ashishgogula.in). The earlier plain HTML/CSS version (transit-line design) is in git history before this change.
 
 ## Users
 
@@ -46,6 +46,8 @@ A mathematician (BSc Mathematics, Athens) who moved into applied AI engineering 
 - Name: Konstantinos Tzimoulias, known as Kostis.
 - Voice: plain, factual, first person singular, no hype and no claims beyond the CV. Early-career honesty: internships and student roles are described as such.
 - Asset: GitHub avatar portrait.
+- Pinned visual reference (user, 2026-10-14): ashishgogula.in. A quiet, dark, single narrow column with small type, plain section labels, ruled lists, a row of small live widgets under the intro, and a GitHub contribution graph. The user wants the site to feel like that reference, not a copy of it.
+- Widgets the user asked for: Copenhagen clock, now-playing music (needs a Last.fm or Spotify account connected), a thesis knowledge-graph mini-visualisation (synthetic demo data, labelled), GitHub contribution graph. More ideas later, possibly around no-gi jiu-jitsu.
 
 ## Evidence on Hand
 

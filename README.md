@@ -1,10 +1,12 @@
 # kostistzim.github.io
 
-Personal CV site of Konstantinos (Kostis) Tzimoulias, served by GitHub Pages from the `main` branch.
+Personal CV site of Konstantinos (Kostis) Tzimoulias. Next.js (App Router, static export), built and deployed to GitHub Pages by the workflow in `.github/workflows/deploy.yml`, which also runs daily so the GitHub activity stays fresh.
 
-- `index.html`, `assets/styles.css`, `assets/site.js`: the whole site. No build step, no dependencies.
-- `assets/fonts/`: self-hosted Overpass and Overpass Mono (SIL Open Font License).
-- `.nojekyll`: tells GitHub Pages to serve the files as they are.
-- `PRODUCT.md`, `DESIGN.md`, `.impeccable/`: design context for the [impeccable](https://impeccable.style) skill used to design the page. Run `/impeccable` in Claude Code inside this repo to iterate on it.
+- `src/lib/content.ts`: all CV content. Edit this to update the page.
+- `src/lib/github.ts`: build-time fetch of the public contribution calendar and recently pushed repositories, with committed snapshots in `src/data/` as fallbacks.
+- `src/components/`: the widgets (Copenhagen clock, Last.fm now-playing, thesis knowledge-graph demo, contribution graph) and the dock.
+- `PRODUCT.md`, `DESIGN.md`, `.impeccable/`: design context for the [impeccable](https://impeccable.style) skill. Run `/impeccable` in Claude Code inside this repo to iterate.
 
-Edit the HTML directly to update the CV. The "Recently pushed on GitHub" list fills itself from the GitHub API and falls back to the saved list in the HTML.
+Local: `npm install`, then `npm run dev`. Production build: `npm run build` writes `out/`.
+
+Now-playing needs two repository variables in GitHub (Settings → Secrets and variables → Actions → Variables): `LASTFM_USER` and `LASTFM_API_KEY`. The widget stays hidden until both exist.
